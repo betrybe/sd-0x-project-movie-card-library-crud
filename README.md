@@ -70,12 +70,17 @@ Todos os `MovieCard`s devem possuir em seu conteudo pelo menos o título de seu 
 
 ### Para os requisitos 5 e 6:
 
-Para sua correta avaliação, os campos do formulário devem possuir as seguintes labels:
-- 'Título'
-- 'Imagem'
-- 'Sinopse'
-- 'Gênero'
-- 'Avaliação'
+Para correta avaliação, os campos do formulário devem possuir as seguintes `<label>` e  tipos de entrada:
+- label: 'Título', entrada: tag `<input>` de tipo 'text'
+- label: 'Subtítulo', entrada: tag `<input>` de tipo 'text'
+- label: 'Imagem', entrada: tag `<input>` de tipo 'text
+- label: 'Sinopse', entrada: tag `<textarea>`
+- label: 'Gênero', entrada: tag `<select>`, com as seguintes opções:
+    - `<option value="action">Ação</option>`
+    - `<option value="comedy">Comédia</option>`
+    - `<option value="thriller">Suspense</option>`
+    - `<option value="fantasy">Fantasia</option>`
+- label: 'Avaliação', entrada: tag `<input>`, de tipo 'number' com valores que vão de 0 (mínimo) a 5 (máximo), com um step de 0.1.
 
 
 ### 5 - `EditMovie`: deve realizar uma requisição para buscar o filme que será editado.
