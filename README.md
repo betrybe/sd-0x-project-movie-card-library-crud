@@ -40,7 +40,9 @@ Este repositório já contém um _template_ com um App React criado e configurad
 
 ## Requisitos do projeto
 
-**ATENÇÃO** Muito cuidado com os nomes especificados nos requisitos! O conteudo deve ser exatamente igual ao texto descrito no requisito. Se vocês perceberam, em alguns componentes react do projeto foram colocados os datasets _data-testid_, sob qualquer hipótese não os altere. Os detalhes acima tem implicação direta no funcionamento do avaliador.
+**ATENÇÃO!** Muito cuidado com os nomes especificados nos requisitos! O conteudo deve ser exatamente igual ao texto descrito no requisito. Se vocês perceberem, em alguns componentes react do projeto foram colocados os datasets _data-testid_ que, sob qualquer hipótese não devem ser alterados. Os detalhes acima tem implicação direta no funcionamento do avaliador.
+
+Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para estruturar e estilizar a página, portanto, abusem da criatividade! 😉
 
 ### 1 - Rotas: O componente `App` deve renderizar `BrowserRouter`
 
@@ -60,20 +62,30 @@ Você precisará adicionar um estado em `MovieList` para controlar o que será e
 
 ### 3 - `MovieCard`: deve possuir um link para a página de detalhes de um filme
 
-Todos os `MovieCard`s devem possuir em seu conteudo pelo menos o título de seu respectivo filme e um link com o texto "VER DETALHES". Este link deve apontar para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
+Todos `MovieCard` deve possuir em seu conteudo no mínimo o título de seu respectivo filme e um link com o texto "VER DETALHES" que aponta para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
 
 ### 4 - `MovieDetails`: deve fazer uma requisição para buscar o filme que deverá ser renderizado
 
-`MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar o card com detalhes sobre o filme. O cartão deve conter todas as informações do filme, a foto de seu banner, um link com o texto "EDITAR" apontando para a rota `/movies/:id/edit` e um link apontando para a rota raiz (`/`) com o texto "VOLTAR", conforme ilustrado na imagem abaixo.
+`MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar um card com mais detalhes sobre o filme, contendo:
+
+  - Uma `<img>` com a imagem do filme;
+  - Título;
+  - Subtítulo;
+  - Sinopse;
+  - Gênero;
+  - Avaliação;
+  - um link com o texto "EDITAR" apontando para a rota `/movies/:id/edit` e um link apontando para a rota raiz (`/`) com o texto "VOLTAR".
+  
+Os campos devem existir no cartão conforme ilustrado na imagem abaixo.
 
 ![image](card-details.png)
 
 ### Para os requisitos 5 e 6:
 
-Para correta avaliação, os campos do formulário devem possuir as seguintes `<label>` e  tipos de entrada:
+Para correta avaliação, os campos do formulário devem possuir as seguintes tags `<label>` e  tipos de entrada:
 - label: 'Título', entrada: tag `<input>` de tipo 'text'
 - label: 'Subtítulo', entrada: tag `<input>` de tipo 'text'
-- label: 'Imagem', entrada: tag `<input>` de tipo 'text
+- label: 'Imagem', entrada: tag `<input>` de tipo 'text'
 - label: 'Sinopse', entrada: tag `<textarea>`
 - label: 'Gênero', entrada: tag `<select>`, com as seguintes opções:
     - `<option value="action">Ação</option>`
@@ -81,6 +93,8 @@ Para correta avaliação, os campos do formulário devem possuir as seguintes `<
     - `<option value="thriller">Suspense</option>`
     - `<option value="fantasy">Fantasia</option>`
 - label: 'Avaliação', entrada: tag `<input>`, de tipo 'number' com valores que vão de 0 (mínimo) a 5 (máximo), com um step de 0.1.
+
+Obs: Lembrem de associar corretamente suas tags e labels!
 
 
 ### 5 - `EditMovie`: deve realizar uma requisição para buscar o filme que será editado.
