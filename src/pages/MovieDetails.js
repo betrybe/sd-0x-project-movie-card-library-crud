@@ -11,6 +11,7 @@ class MovieDetails extends Component {
 
     return (
       <div data-testid='movie-details'>
+        Movie Details
       </div>
     );
   }
