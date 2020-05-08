@@ -1,73 +1,78 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ...props.movie };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    const { onSubmit } = this.props;
-    onSubmit(this.state);
+    // Lógica para envio do formulário
   }
 
-  updateMovie(field, newValue) {
-    this.setState({ [field]: newValue });
+  updateMovie() {
+    // Lógica para atualização do filme
   }
 
   renderTitleInput() {
-    const { title } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Title Input
+      </div>
     );
   }
 
   renderSubtitleInput() {
-    const { subtitle } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Subtitle Input
+      </div>
     );
   }
 
   renderImagePathInput() {
-    const { imagePath } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Image path Input
+      </div>
     );
   }
 
   renderStorylineInput() {
-    const { storyline } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Storyline Input
+      </div>
     );
   }
 
   renderGenreSelection() {
-    const { genre } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Genre Input
+      </div>
     );
   }
 
   renderRatingInput() {
-    const { rating } = this.state;
 
     return (
-      <div></div>
+      <div>
+        Rating Input
+      </div>
     );
   }
 
   renderSubmitButton() {
     return (
-      <div></div>
+      <div>
+        Submit Form
+      </div>
     );
   }
 
