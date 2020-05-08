@@ -6,10 +6,12 @@ import { createBrowserHistory } from 'history';
 import MutationObserver from 'mutationobserver-shim';
 import { render, waitFor, screen, fireEvent, cleanup } from '@testing-library/react'
 
-import App from './App';
 import data from './services/movieData';
 import * as movieAPI from './services/movieAPI';
+
+import App from './App';
 import MovieList from './pages/MovieList';
+import NewMovie from './pages/NewMovie';
 
 const resetStorage = () => { localStorage.setItem('movies', JSON.stringify(data)) };
 resetStorage();
@@ -257,18 +259,18 @@ describe('5 - Edit movie component', () => {
       
       fireEvent.click(formButton);
       await waitFor(() => movieAPI.getMovies())
-      // expect(window.location.pathname).toBe('/');
-      // expect(screen.getByText(`test title ${movie.id}`));
-      // expect(screen.getByText(`test synopsis ${movie.id}`));
+      expect(window.location.pathname).toBe('/');
+      expect(screen.getByText(`test title ${movie.id}`));
+      expect(screen.getByText(`test synopsis ${movie.id}`));
 
-      // fireEvent.click(screen.getAllByText('VER DETALHES')[movie.id - 1]);
-      // await waitFor(() => movieAPI.getMovie(movie.id));
-      // expect(screen.getAllByText(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
-      // expect(screen.getAllByText(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
-      // expect(screen.getAllByText(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
-      // const image = screen.getByAltText('Movie Cover', { exact: false });
-      // expect(image.src).toBe('http://localhost/' + readMovies()[movie.id - 1].imagePath);
-      // expect(screen.getAllByText(readMovies()[movie.id - 1].genre, { exact: false }))
+      fireEvent.click(screen.getAllByText('VER DETALHES')[movie.id - 1]);
+      await waitFor(() => movieAPI.getMovie(movie.id));
+      expect(screen.getAllByText(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].subtitle, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
+      const image = screen.getByAltText('Movie Cover', { exact: false });
+      expect(image.src).toBe('http://localhost/' + readMovies()[movie.id - 1].imagePath);
+      expect(screen.getAllByText(readMovies()[movie.id - 1].genre, { exact: false }))
     }
    
   });
@@ -285,7 +287,10 @@ describe('6 - New movie component', () => {
     unmount();
   })
   it('should create a new movie', async () => {
-    const { container, unmount } = renderPath('/movies/new');
+    await cleanup();
+    const history = createBrowserHistory();
+    history.push('/movies/new')
+    render(<NewMovie history={history} />)
     
     const titleInput = screen.getByLabelText('Título');
     const subTitleInput = screen.getByLabelText('Subtítulo');
@@ -305,9 +310,12 @@ describe('6 - New movie component', () => {
 
     await waitFor(() => movieAPI.getMovies())
     expect(window.location.pathname).toBe('/');
+    await cleanup();
+    renderPath('/');
+    await waitFor(() => movieAPI.getMovies());
     expect(screen.getByText(`newTitle`));
     expect(screen.getByText(`newSynopsis`));
-    expect(screen.getAllByText('VER DETALHES').length).toBe(6);
+    expect(screen.getAllByTestId('movie-card').length).toBe(6);
     
   })
 })
