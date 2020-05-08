@@ -24,7 +24,9 @@ class EditMovie extends Component {
     }
 
     return (
-      <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+      <div data-testid="edit-movie">
+        <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+      </div>
     );
   }
 }
