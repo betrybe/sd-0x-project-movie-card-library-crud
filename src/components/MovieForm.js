@@ -109,17 +109,17 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-          <input
-            placeholder="Dê a avaliação do filme"
-            id="movie_rating"
-            type="number"
-            step={0.1}
-            min={0}
-            max={5}
-            value={rating}
-            onChange={(event) => this.updateMovie('rating', event.target.value)}
-            />
-          <label htmlFor="movie_rating">Avaliação</label>
+        <input
+          placeholder="Dê a avaliação do filme"
+          id="movie_rating"
+          type="number"
+          step={0.1}
+          min={0}
+          max={5}
+          value={rating}
+          onChange={(event) => this.updateMovie('rating', event.target.value)}
+        />
+        <label htmlFor="movie_rating">Avaliação</label>
       </div>
     );
   }
