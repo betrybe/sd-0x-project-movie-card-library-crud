@@ -21,19 +21,7 @@ class MovieForm extends React.Component {
     const { title } = this.state;
 
     return (
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            placeholder="Insira o título"
-            id="movie_title"
-            type="text"
-            className="validate"
-            value={title}
-            onChange={(event) => this.updateMovie('title', event.target.value)}
-          />
-          <label className="active" htmlFor="movie_title">Título</label>
-        </div>
-      </div>
+      <div></div>
     );
   }
 
@@ -41,19 +29,7 @@ class MovieForm extends React.Component {
     const { subtitle } = this.state;
 
     return (
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            placeholder="Insira o subtítulo"
-            id="movie_subtitle"
-            type="text"
-            className="validate"
-            value={subtitle}
-            onChange={(event) => this.updateMovie('subtitle', event.target.value)}
-          />
-          <label className="active" htmlFor="movie_subtitle">Subtítulo</label>
-        </div>
-      </div>
+      <div></div>
     );
   }
 
@@ -61,19 +37,7 @@ class MovieForm extends React.Component {
     const { imagePath } = this.state;
 
     return (
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            placeholder="Insira o caminho da imagem"
-            id="movie_image"
-            type="text"
-            className="validate"
-            value={imagePath}
-            onChange={(event) => this.updateMovie('imagePath', event.target.value)}
-          />
-          <label className="active" htmlFor="movie_image">Imagem</label>
-        </div>
-      </div>
+      <div></div>
     );
   }
 
@@ -81,17 +45,7 @@ class MovieForm extends React.Component {
     const { storyline } = this.state;
 
     return (
-      <div className="row">
-        <div className="input-field col s12">
-          <textarea
-            id="movie_storyline"
-            className="materialize-textarea"
-            value={storyline}
-            onChange={(event) => this.updateMovie('storyline', event.target.value)}
-          />
-          <label className="active" htmlFor="movie_storyline">Sinopse</label>
-        </div>
-      </div>
+      <div></div>
     );
   }
 
@@ -99,20 +53,7 @@ class MovieForm extends React.Component {
     const { genre } = this.state;
 
     return (
-      <div className="row col">
-        <label htmlFor="movie_genre">Gênero</label>
-        <select
-          id="movie_genre"
-          className="browser-default"
-          value={genre}
-          onChange={(event) => this.updateMovie('genre', event.target.value)}
-        >
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-          <option value="fantasy">Fantasia</option>
-        </select>
-      </div>
+      <div></div>
     );
   }
 
@@ -120,81 +61,29 @@ class MovieForm extends React.Component {
     const { rating } = this.state;
 
     return (
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            placeholder="Dê a avaliação do filme"
-            id="movie_rating"
-            type="number"
-            className="form-control"
-            step={0.1}
-            min={0}
-            max={5}
-            value={rating}
-            onChange={(event) => this.updateMovie('rating', event.target.value)}
-          />
-          <label className="active" htmlFor="movie_rating">Avaliação</label>
-        </div>
-      </div>
+      <div></div>
     );
   }
 
   renderSubmitButton() {
     return (
-      <div className="row">
-        <button
-          className="btn waves-effect waves-light"
-          type="button"
-          onClick={this.handleSubmit}
-        >
-          Submit
-        </button>
-      </div>
+      <div></div>
     );
   }
 
   render() {
     return (
-      <div className="movie-form">
-        <div className="row">
-          <form className="col s12">
-            {this.renderTitleInput()}
-            {this.renderSubtitleInput()}
-            {this.renderImagePathInput()}
-            {this.renderStorylineInput()}
-            {this.renderGenreSelection()}
-            {this.renderRatingInput()}
-            {this.renderSubmitButton()}
-          </form>
-        </div>
-      </div>
+      <form>
+        {this.renderTitleInput()}
+        {this.renderSubtitleInput()}
+        {this.renderImagePathInput()}
+        {this.renderStorylineInput()}
+        {this.renderGenreSelection()}
+        {this.renderRatingInput()}
+        {this.renderSubmitButton()}
+      </form>
     );
   }
 }
-
-// MovieForm.propTypes = {
-//   onSubmit: Proptypes.func.isRequired,
-
-//   movie: Proptypes.shape({
-//     title: Proptypes.string,
-//     storyline: Proptypes.string,
-//     imagePath: Proptypes.string,
-//     rating: Proptypes.number,
-//     subtitle: Proptypes.string,
-//     genre: Proptypes.string,
-//   }).isRequired,
-// };
-
-MovieForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-
-  movie: PropTypes.shape({
-    title: PropTypes.string,
-    storyline: PropTypes.string,
-    imagePath: PropTypes.string,
-    rating: PropTypes.number,
-    subtitle: PropTypes.string,
-  }),
-};
 
 export default MovieForm;

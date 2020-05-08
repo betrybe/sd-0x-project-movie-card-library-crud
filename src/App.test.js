@@ -99,14 +99,14 @@ describe('1 - Route check', () => {
     unmount();
   })
   test('check movie pages', () => {
-    readMovies().forEach((movie) => {
+    for(const movie of readMovies()) {
       const { unmount, getByTestId } = renderPath('/movies/' + movie.id);
       async () => {
         await waitFor(() => movieAPI.getMovies());
         expect.anything(getByTestId('movie-details'));
         unmount();
       }
-    })
+    }
   })
   test('check new movie page', () => {
     const { unmount, getByTestId } = renderPath('/movies/new');
@@ -114,14 +114,14 @@ describe('1 - Route check', () => {
     unmount();
   })
   test('check edit movie pages', () => {
-    readMovies().forEach((movie) => {
+    for(const movie of readMovies()) {
       const { unmount, getByTestId } = renderPath('/movies/' + movie.id + '/edit');
       async () => {
         await waitFor(() => movieAPI.getMovies());
         expect.anything(getByTestId('edit-movie'));
         unmount();
       };
-    })
+    }
   })
   test('check 404 error page', () => {
     const { unmount, getByTestId } = renderPath('/' + Math.random());

@@ -4,7 +4,7 @@ class NotFound extends Component {
   render() {
     return (
       <div data-testid="404-error">
-        <div className="not-found header">
+        <div>
           Página não encontrada
         </div>
       </div>
