@@ -100,7 +100,7 @@ class MovieForm extends React.Component {
 
     return (
       <div className="row col">
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
           className="browser-default"

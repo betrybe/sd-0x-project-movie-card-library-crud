@@ -40,29 +40,13 @@ Este repositório já contém um _template_ com um App React criado e configurad
 
 ## Requisitos do projeto
 
-### 1 - O componente `App` deve renderizar `BrowserRouter`
+**ATENÇÃO** Muito cuidado com os nomes especificados nos requisitos! O conteudo deve ser exatamente igual ao texto descrito no requisito. Se vocês perceberam, em alguns componentes react do projeto foram colocados os datasets _data-testid_, sob qualquer hipótese não os altere. Os detalhes acima tem implicação direta no funcionamento do avaliador.
 
-O componente `App`, que representa toda a aplicação, deve importar e renderizar `BrowserRouter`.
+### 1 - Rotas: O componente `App` deve renderizar `BrowserRouter`
 
-### 2 - O componente `BrowserRouter` deve renderizar `Switch`
+Você deve utilizar um `BrowserRouter` pra criar as rotas da sua aplicação. As urls de cada página deve ser desenvolvida conforme especificado na seção _O que será desenvolvido_. 
 
-O componente `Switch` deve ser o único filho direto de `BrowserRouter`. Dentro de `Switch` ficarão as rotas relacionadas às diferentes páginas da aplicação.
-
-### 3 - O componente `Switch` deve renderizar as 4 rotas do app
-
-O app possui ao todo 4 rotas, como descrito na seção [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido). Cada rota é associada a um caminho de URL e a um componente. Este componente renderizará um conteúdo específico para aquela rota. O mapeamento entre rotas, caminhos de URL e componentes estão listados abaixo.
-
-1. O caminho raiz do projeto (`/`) deve renderizar o componente `MovieList`.
-
-2. O caminho `movies/:id` deve renderizar o componente `MovieDetails`. Onde o `:id` é o parâmetro da URL que representa ID do filme que `MovieDetails` renderizará.
-
-3. O caminho `/movies/new` deve renderizar o componente `NewMovie`.
-
-4. O caminho `movies/:id/edit` deve renderizar o componente `EditMovie`. `:id` é um parâmetro de URL com o id do filme que `EditMovie` possibilitará editar.
-
-5. Qualquer outro caminho que não se enquadre nas rotas anteriores deve renderizar o componente `NotFound`.
-
-### 4 - Ao ser montado, `MovieList` deve fazer uma requisição para buscar a lista de filmes a ser renderizada
+### 2 - Movie list: Ao ser montado, `MovieList` deve fazer uma requisição para buscar a lista de filmes a ser renderizada
 
 Para buscar a lista, você deve utilizar a função `getMovies` importada do módulo `movieAPI` em `MovieList`. Essa função retorna uma _promise_. A requisição deve ser feita no momento em que o `MovieList` for montado no DOM. Enquanto a requisição estiver em curso, `MovieList` deve renderizar o componente `Loading`, como ilustrado na imagem a seguir.
 
@@ -74,41 +58,37 @@ Uma vez que a requisição retornar, o resultado deve ser renderizado. Para cada
 
 Você precisará adicionar um estado em `MovieList` para controlar o que será exibido.
 
-### 5 - `MovieCard` deve possuir um link para a página de detalhes de um filme
+### 3 - `MovieCard`: deve possuir um link para a página de detalhes de um filme
 
-Cada cartão da lista deve conter em seu rodapé um link com o texto "VER DETALHES". Este link deve apontar para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
+Todos os `MovieCard`s devem possuir em seu conteudo pelo menos o título de seu respectivo filme e um link com o texto "VER DETALHES". Este link deve apontar para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
 
-### 6 - Ao ser montado, `MovieDetails` deve fazer uma requisição para buscar o filme que deverá ser renderizado
+### 4 - `MovieDetails`: deve fazer uma requisição para buscar o filme que deverá ser renderizado
 
-`MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar o card com detalhes sobre o filme.
-
-### 7 - `MovieDetails` deve possuir um link para a página de edição de filmes.
-
-No rodapé do cartão, deve haver um link com o texto "EDITAR" apontando para a rota `/movies/:id/edit`, conforme ilustrado na imagem abaixo.
+`MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar o card com detalhes sobre o filme. O cartão deve conter todas as informações do filme, a foto de seu banner, um link com o texto "EDITAR" apontando para a rota `/movies/:id/edit` e um link apontando para a rota raiz (`/`) com o texto "VOLTAR", conforme ilustrado na imagem abaixo.
 
 ![image](card-details.png)
 
-### 8 - `MovieDetails` deve possuir um link para voltar à pagina inicial
+### Para os requisitos 5 e 6:
 
-No rodapé do cartão, deve haver um link apontando para a rota raiz (`/`) com o texto "VOLTAR", conforme ilustrado na imagem acima.
+Para sua correta avaliação, os campos do formulário devem possuir as seguintes labels:
+- 'Título'
+- 'Imagem'
+- 'Sinopse'
+- 'Gênero'
+- 'Avaliação'
 
-### 9 - Ao ser montado, `EditMovie` deve realizar uma requisição para buscar o filme que será editado.
 
-O comportamento de `EditMovie` é muito semelhante ao de `MovieDetails`. `EditMovie`, no entando, renderizará o formulário de edição de filme.
+### 5 - `EditMovie`: deve realizar uma requisição para buscar o filme que será editado.
 
-### 10 - Ao submeter o formulário, `EditMovie` deve atualizar o filme e redirecionar a página para a rota raiz.
+Ao ser montada, a página de edição do filme deve fazer uma requisição pra buscar o filme que será editado e deve, ao ter seu formulário submetido, artualizar o filme e redirecionar a página pra rota raíz.
 
-O componente `MovieForm` recebe uma callback, que será executada quando o formulário for submetido. Essa callback recebe os dados atualizados do filme. Neste momento, `EditMovie` deve fazer uma requisição utilizando a função `updateMovie` do módulo `movieAPI`, passando como argumentos os dados atualizados. Quando a requisição finalizar, `EditMovie` deve redirecionar o app para a rota raiz (`/`).
+### 6 - `NewMovie`: Na página inicial, deve haver um link para criar novos cartões.
 
-### 11 - Na página inicial, deve haver um link para criar novos cartões.
+O link deve conter o texto "ADICIONAR CARTÃO" e apontar para a rota `/movies/new`, contendo um formulário para criar novos cartões.
 
-O link deve conter o texto "ADICIONAR CARTÃO" e apontar para a rota `/movies/new`, contento um formulário para criar novos cartões.
+Na rota `/movies/new`, utilizando a callback passada para `MovieForm`, `NewMovie` deve criar um novo cartão utilizando a função `createMovie` do módulo `movieAPI`. Após o fim da requisição, `NewMovie` deve redirecionar o app para a página inicial, contento o novo cartão.
 
-### 12 - Ao submeter o formulário, `NewMovie` deve criar um novo filme e redirecionar o app para a página inicial.
-
-Utilizando a callback passada para `MovieForm`, `NewMovie` deve criar um novo cartão utilizando a função `createMovie` do módulo `movieAPI`. Após o fim da requisição, `NewMovie` deve redirecionar o app para a página inicial, contento o novo cartão.
-
-### 13 - Adicione proptypes a todos os componentes
+### 7 - Adicione proptypes a todos os componentes
 
 Todos os compontens que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá passar no _Code Climate_ para satisfazer esse requisito.
 
@@ -123,9 +103,9 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-02-week13-movie-card-library-crud.git`.
+  * `git clone git@github.com:tryber/sd-0x-block14-movie-card-library-crud.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-02-week13-movie-card-library-crud`
+    * `cd sd-0x-block14-movie-card-library-crud`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -175,13 +155,13 @@ export default App;
   * Usando o exemplo anterior: `git push -u origin joaozinho-movie-cards-library-crud`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-02-week13-movie-card-library-crud/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block14-movie-card-library-crud/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-02-week13-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block14-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -209,7 +189,7 @@ Para **"entregar"** seu projeto, siga os passos a seguir:
 * Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
   * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-02`
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 

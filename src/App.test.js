@@ -4,7 +4,7 @@ import { Router, BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import MutationObserver from 'mutationobserver-shim';
-import { render, waitFor, screen, fireEvent, cleanup } from '@testing-library/react'
+import { render, waitFor, screen, fireEvent, cleanup, wait } from '@testing-library/react'
 
 import data from './services/movieData';
 import * as movieAPI from './services/movieAPI';
@@ -236,7 +236,7 @@ describe('5 - Edit movie component', () => {
     }
   });
   
-
+ 
   it('each edit page form should update movie', async () => {
     for(const movie of readMovies()) {
       await cleanup();
@@ -246,7 +246,7 @@ describe('5 - Edit movie component', () => {
       const subTitleInput = getByLabelText('Subtítulo');
       const imageInput = getByLabelText('Imagem');
       const synopsisInput = getByLabelText('Sinopse');
-      const genreInput = getByLabelText('Genre Select');
+      const genreInput = getByLabelText('Gênero');
       const evaluationInput = getByLabelText('Avaliação');
       const formButton = getByRole('button');
       
@@ -257,7 +257,8 @@ describe('5 - Edit movie component', () => {
       fireEvent.change(genreInput, { target: { value: 'comedy' } })
       fireEvent.change(evaluationInput, { target: { value: movie.id.toString() } })
       
-      fireEvent.click(formButton);
+      await waitFor(() => fireEvent.click(formButton));
+      
       await waitFor(() => movieAPI.getMovies())
       expect(window.location.pathname).toBe('/');
       expect(screen.getByText(`test title ${movie.id}`));
@@ -274,7 +275,7 @@ describe('5 - Edit movie component', () => {
     }
    
   });
-
+ 
 })
 
 describe('6 - New movie component', () => {
@@ -296,9 +297,11 @@ describe('6 - New movie component', () => {
     const subTitleInput = screen.getByLabelText('Subtítulo');
     const imageInput = screen.getByLabelText('Imagem');
     const synopsisInput = screen.getByLabelText('Sinopse');
-    const genreInput = screen.getByLabelText('Genre Select');
+    const genreInput = screen.getByLabelText('Gênero');
     const evaluationInput = screen.getByLabelText('Avaliação');
     const formButton = screen.getByRole('button');
+
+    console.log(titleInput.innerHTML);
 
     fireEvent.change(titleInput, { target: { value: 'newTitle'} })
     fireEvent.change(subTitleInput, { target: { value: 'newSubtitle'} })
