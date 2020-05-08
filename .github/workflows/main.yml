@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/checkout@v2
         if: steps.wait-for-build.outputs.conclusion == 'success'
-       - name: React Scripts evaluator step
+      - name: React Scripts evaluator step
         id: react-scripts
         uses: betrybe/react-scripts-evaluator-action@v2
         if: steps.wait-for-build.outputs.conclusion == 'success'
@@ -27,4 +27,3 @@ jobs:
           evaluation-data: ${{ steps.react-scripts.outputs.result }}
           environment: staging
           pr-number: ${{ steps.react-scripts.outputs.pr-number }}
-
