@@ -54,6 +54,8 @@ Para buscar a lista, você deve utilizar a função `getMovies` importada do mó
 
 ![image](loading.png)
 
+Obs: O componente `Loading` deve conter o texto `Carregando...`
+
 Uma vez que a requisição retornar, o resultado deve ser renderizado. Para cada filme, renderize um componente `MovieCard`, como ilustrado abaixo.
 
 ![image](index.png)
@@ -94,7 +96,7 @@ Para correta avaliação, os campos do formulário devem possuir as seguintes ta
     - `<option value="fantasy">Fantasia</option>`
 - label: 'Avaliação', entrada: tag `<input>`, de tipo 'number' com valores que vão de 0 (mínimo) a 5 (máximo), com um step de 0.1.
 
-Obs: Lembrem de associar corretamente suas tags e labels!
+Obs: O conteudo das tags `<label>` devem estar idênticos ao específicado acima. Importante associar corretamente todas as suas entradas e labels!
 
 
 ### 5 - `EditMovie`: deve realizar uma requisição para buscar o filme que será editado.
