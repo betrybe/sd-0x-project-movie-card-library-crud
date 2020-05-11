@@ -70,7 +70,7 @@ Todos `MovieCard` deve possuir em seu conteudo no mínimo título e sinopse de s
 
 `MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar um card com mais detalhes sobre o filme, contendo:
 
-  - Uma `<img>` com a imagem do filme;
+  - Uma `<img>` com a imagem do filme e `alt='Movie Cover'`;
   - Título;
   - Subtítulo;
   - Sinopse;

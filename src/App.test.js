@@ -142,12 +142,13 @@ describe('2 - Movie list component', () => {
 });
 
 describe('3 - Movie card component', () => {
-  test('each card should have at least its movie title', async () => {
+  test('each card should have at least its movies title and synopsis', async () => {
     const { unmount, getAllByText } = renderPath('/');
     await waitFor(() => movieAPI.getMovies());
     expect(screen.getAllByTestId('movie-card').length).toBe(5);
     readMovies().forEach((movie) => {
       expect(getAllByText(movie.title).length).toBeGreaterThanOrEqual(1);
+      expect(getAllByText(movie.storyline).length).toBeGreaterThanOrEqual(1);
     })
     unmount();
   })
