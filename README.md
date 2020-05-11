@@ -64,13 +64,13 @@ Você precisará adicionar um estado em `MovieList` para controlar o que será e
 
 ### 3 - `MovieCard`: deve possuir um link para a página de detalhes de um filme
 
-Todos `MovieCard` deve possuir em seu conteudo no mínimo o título de seu respectivo filme e um link com o texto "VER DETALHES" que aponta para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
+Todos `MovieCard` deve possuir em seu conteudo no mínimo título e sinopse de seu respectivo filme e um link com o texto "VER DETALHES" que aponta para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
 
 ### 4 - `MovieDetails`: deve fazer uma requisição para buscar o filme que deverá ser renderizado
 
 `MovieDetails` se comporta de forma muito semelhante ao `MovieList`. Ao ser montado, deve fazer uma requisição utilizando a função `getMovie` do módulo `movieAPI`, passando o id do filme. O componente `Loading` deve ser renderizado enquanto a requisição estiver em curso. Após terminar, deve-se renderizar um card com mais detalhes sobre o filme, contendo:
 
-  - Uma `<img>` com a imagem do filme;
+  - Uma `<img>` com a imagem do filme e `alt='Movie Cover'`;
   - Título;
   - Subtítulo;
   - Sinopse;
@@ -203,7 +203,7 @@ export default App;
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
