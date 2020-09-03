@@ -4,6 +4,71 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
 
+### ANTES DE COMEÇAR A DESENVOLVER:
+
+1. Clone o repositório
+  * `git clone git@github.com:tryber/sd-0x-project-movie-card-library-crud.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd sd-0x-project-movie-card-library-crud`
+
+2. Instale as dependências e inicialize o projeto
+  * Instale as dependências:
+    * `npm install`
+  * Inicialize o projeto:
+    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
+
+3. Crie uma branch a partir da branch `master`
+  * Verifique que você está na branch `master`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `master`
+    * Exemplo: `git checkout master`
+  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
+    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+    * Exemplo: `git checkout -b joaozinho-project-movie-card-library-crud`
+
+4. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `App` em `src/`:
+```jsx
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <div>Movie Card Library CRUD</div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+  * Verifique que as mudanças ainda não estão no _stage_
+    * Exemplo: `git status` (deve aparecer listado o arquivo _src/App.js_ em vermelho)
+  * Adicione o arquivo alterado ao _stage_ do Git
+      * Exemplo:
+        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+        * `git status` (deve aparecer listado o arquivo _src/App.js_ em verde)
+  * Faça o `commit` inicial
+      * Exemplo:
+        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+6. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin joaozinho-project-movie-card-library-crud`
+
+7. Crie um novo `Pull Request` _(PR)_
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls)
+  * Clique no botão verde _"New pull request"_
+  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+  * Clique no botão verde _"Create pull request"_
+  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+  * **Não se preocupe em preencher mais nada por enquanto!**
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
+
+---
+
 ## O que deverá ser desenvolvido
 
 Dando continuidade aos últimos projetos, você criará um **CRUD** de cartões de filmes em React. 
@@ -34,15 +99,15 @@ Naturalmente, haverá links de navegação e redirecionamento entre as diferente
 
 Outra diferença importante neste projeto em relação aos anteriores é que os dados virão de uma API (simulada) e não mais de um arquivo estático. Você utilizará essa API para criar, ler, atualizar e apagar filmes. Logo, você terá que lidar com requisições assíncronas e _promises_. Também deverá fazer uso de _lifecycle methods_ e de estados para controlar o que é renderizado por seus componentes a depender de em que momento as requisições se encontram.
 
-## Desenvolvimento
-
-Este repositório já contém um _template_ com um App React criado e configurado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você não precisará realizar nenhuma configuração adicional. Todos os componentes estritamente necessários para finalizar o projeto já estão criados, mas você pode adicionar outros se julgar necessário. Você deverá complementar estes componentes de forma a satisfazer os requisitos listados na próxima seção.
+---
 
 ## Requisitos do projeto
 
 **ATENÇÃO!** Muito cuidado com os nomes especificados nos requisitos! O conteúdo deve ser **exatamente igual** ao texto descrito no requisito. Em alguns componentes foram colocadas propriedades chamadas _data-testid_ que, sob qualquer hipótese não devem ser alteradas. Os detalhes acima tem implicação direta no funcionamento do avaliador.
 
 Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para estruturar e estilizar a página, portanto, abusem da criatividade! 😉
+
+---
 
 ### 1 - Rotas: O componente `App` deve renderizar `BrowserRouter`
 
@@ -119,109 +184,46 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 
 ---
 
-## Instruções para entregar seu projeto:
-
-### ANTES DE COMEÇAR A DESENVOLVER:
-
-1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-block14-project-movie-card-library-crud.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-block14-project-movie-card-library-crud`
-
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-movie-card-library-crud`
-
-4. Faça alterações em algum dos componentes que precisam de implementação, por exemplo o `App` em `src/`:
-```jsx
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
-
-function App() {
-  return (
-    <Router>
-      <div>Movie Card Library CRUD</div>
-    </Router>
-  );
-}
-
-export default App;
-```
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listado o arquivo _src/App.js_ em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _src/App.js_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-movie-card-library-crud`
-
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-block14-project-movie-card-library-crud/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-block14-project-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
-
----
-
 ### DURANTE O DESENVOLVIMENTO
 
 * ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
-* Faça `commits` das alterações que você fizer no código regularmente
+* Faça `commits` das alterações que você fizer no código regularmente;
 
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+* Lembre-se de sempre após um ~~(ou alguns)~~ `commits` atualizar o repositório remoto (o famoso `git push`);
 
 * Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_;
+
+  2. `git add` _(para adicionar arquivos ao stage do Git)_;
+
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_;
+
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_;
+
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_.
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO - OPCIONAL, PORÉM MUITO IMPORTANTE! <3
 
-Para **"entregar"** seu projeto, siga os passos a seguir:
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
 
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ---
 
 ### REVISANDO UM PULL REQUEST
 
-⚠⚠⚠
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
-À medida que você e os outros alunos forem entregando os projetos, vocês serão alertados **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
-
-Os monitores também farão a revisão de todos os projetos, e irão avaliar tanto o seu _Pull Request_, quanto as revisões que você fizer nos _Pull Requests_ dos seus colegas!!!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+#VQV 🚀
