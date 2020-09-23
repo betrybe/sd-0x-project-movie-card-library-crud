@@ -162,7 +162,7 @@ describe('3 - MovieCard: deve possuir um link para a página de detalhes de um f
   })
 })
 
-describe('4 - MovieDetails: deve fazer uma requisição para buscar o filme que deverá ser renderizado', () => {
+describe.only('4 - MovieDetails: deve fazer uma requisição para buscar o filme que deverá ser renderizado', () => {
 
   it('each movie details page should have a loading screen', () => {
     readMovies().forEach(async (movie) => {
@@ -177,10 +177,10 @@ describe('4 - MovieDetails: deve fazer uma requisição para buscar o filme que 
       const { container, unmount } = renderPath(`/movies/${movie.id}`);
       await waitFor(() => movieAPI.getMovie(movie.id))
       expect(screen.getAllByText(readMovies()[movie.id - 1].title, { exact: false }).length).toBeGreaterThanOrEqual(1);
+      console.log(screen.getAllByTestId('movie-details').length)
       expect(screen.getAllByText(readMovies()[movie.id - 1].subtitle, { exact: false }).length)
         .toBeGreaterThanOrEqual(1);
       expect(screen.getByText(readMovies()[movie.id - 1].storyline, { exact: false })).toBeTruthy;
-
       let image = screen.getByAltText('Movie Cover').src.split('/').slice(-2).join('/')
       expect(image).toEqual(readMovies()[movie.id - 1].imagePath);
       expect(screen.getAllByText(readMovies()[movie.id - 1].genre, { exact: false })).toBeTruthy;
