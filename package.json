@@ -1,5 +1,5 @@
 {
-  "name": "sd-0x-block14-project-movie-card-library-crud",
+  "name": "sd-04-project-movie-card-library-crud",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,6 +33,6 @@
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.4",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.2.0"
   }
 }
