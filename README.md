@@ -23,15 +23,17 @@ Nesse projeto, você será capaz de:
 - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [1 - Rotas: O componente App deve renderizar BrowserRouter](#1---rotas-o-componente-app-deve-renderizar-browserrouter)
-  - [2 - Movie list: Ao ser montado, MovieList deve fazer uma requisição para buscar a lista de filmes a ser renderizada](#2---movie-list-ao-ser-montado-movielist-deve-fazer-uma-requisição-para-buscar-a-lista-de-filmes-a-ser-renderizada)
-  - [3 - MovieCard: deve possuir um link para a página de detalhes de um filme](#3---moviecard-deve-possuir-um-link-para-a-página-de-detalhes-de-um-filme)
-  - [4 - MovieDetails: deve fazer uma requisição para buscar o filme que deverá ser renderizado](#4---moviedetails-deve-fazer-uma-requisição-para-buscar-o-filme-que-deverá-ser-renderizado)
-  - [Para os requisitos 5 e 6](#para-os-requisitos-5-e-6)
-  - [5 - EditMovie: deve realizar uma requisição para buscar o filme que será editado](#5---editmovie-deve-realizar-uma-requisição-para-buscar-o-filme-que-será-editado)
-  - [6 - NewMovie: Na página inicial, deve haver um link para criar novos cartões](#6---newmovie-na-página-inicial-deve-haver-um-link-para-criar-novos-cartões)
-  - [7 - Adicione proptypes a todos os componentes](#7---adicione-proptypes-a-todos-os-componentes)
-  - [Bônus: Adicione um link para deletar um cartão em MovieDetails](#bônus-adicione-um-link-para-deletar-um-cartão-em-moviedetails)
+  - [Linter](#linter)
+  - [Lista de requisitos](#lista-de-requisitos)
+    - [1 - Rotas: O componente App deve renderizar BrowserRouter](#1---rotas-o-componente-app-deve-renderizar-browserrouter)
+    - [2 - Movie list: Ao ser montado, MovieList deve fazer uma requisição para buscar a lista de filmes a ser renderizada](#2---movie-list-ao-ser-montado-movielist-deve-fazer-uma-requisição-para-buscar-a-lista-de-filmes-a-ser-renderizada)
+    - [3 - MovieCard: deve possuir um link para a página de detalhes de um filme](#3---moviecard-deve-possuir-um-link-para-a-página-de-detalhes-de-um-filme)
+    - [4 - MovieDetails: deve fazer uma requisição para buscar o filme que deverá ser renderizado](#4---moviedetails-deve-fazer-uma-requisição-para-buscar-o-filme-que-deverá-ser-renderizado)
+    - [Para os requisitos 5 e 6](#para-os-requisitos-5-e-6)
+    - [5 - EditMovie: deve realizar uma requisição para buscar o filme que será editado](#5---editmovie-deve-realizar-uma-requisição-para-buscar-o-filme-que-será-editado)
+    - [6 - NewMovie: Na página inicial, deve haver um link para criar novos cartões](#6---newmovie-na-página-inicial-deve-haver-um-link-para-criar-novos-cartões)
+    - [7 - Adicione proptypes a todos os componentes](#7---adicione-proptypes-a-todos-os-componentes)
+    - [Bônus: Adicione um link para deletar um cartão em MovieDetails](#bônus-adicione-um-link-para-deletar-um-cartão-em-moviedetails)
 - [Revisando um pull request](#revisando-um-pull-request)
 
 ## O que deverá ser desenvolvido
@@ -184,6 +186,18 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para estruturar e estilizar a página, portanto, abusem da criatividade! 😉
 
 ---
+
+### Linter
+
+Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente no seu projeto, execute o comando abaixo:
+
+```bash
+npm run lint -s
+```
+
+⚠ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+
+### Lista de requisitos
 
 ### 1 - Rotas: O componente `App` deve renderizar `BrowserRouter`
 
