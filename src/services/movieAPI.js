@@ -6,12 +6,14 @@ const readMovies = () => JSON.parse(localStorage.getItem('movies'));
 
 const saveMovies = (movies) => localStorage.setItem('movies', JSON.stringify(movies));
 
+const TIME_OUT = 2000;
+
 export const getMovies = () => (
   new Promise((resolve) => {
     setTimeout(() => {
       const movies = readMovies();
       resolve(movies);
-    }, 2000);
+    }, TIME_OUT);
   })
 );
 
@@ -21,39 +23,39 @@ export const getMovie = (movieId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(movie);
-    }, 2000);
+    }, TIME_OUT);
   });
 };
 
-export const updateMovie = (updatedMovie) => {
-  const movies = readMovies().map((movie) => {
-    if (movie.id === parseInt(updatedMovie.id, 10)) {
-      return { ...movie, ...updatedMovie };
-    }
-    return movie;
-  });
-  saveMovies(movies);
-
-  return new Promise((resolve) => {
+export const updateMovie = (updatedMovie) => (
+  new Promise((resolve) => {
+    const movies = readMovies().map((movie) => {
+      if (movie.id === parseInt(updatedMovie.id, 10)) {
+        return { ...movie, ...updatedMovie };
+      }
+      return movie;
+    });
+    saveMovies(movies);
+    // Simula o tempo de resposta
     setTimeout(() => {
       resolve('OK');
-    }, 1000);
-  });
-};
+    }, TIME_OUT);
+  })
+);
 
-export const createMovie = (movieData) => {
-  let movies = readMovies();
-  const nextId = movies[movies.length - 1].id + 1;
-  const newMovie = { ...movieData, id: nextId };
-  movies = [...movies, newMovie];
-  saveMovies(movies);
-
-  return new Promise((resolve) => {
+export const createMovie = (movieData) => (
+  new Promise((resolve) => {
+    let movies = readMovies();
+    const nextId = movies[movies.length - 1].id + 1;
+    const newMovie = { ...movieData, id: nextId };
+    movies = [...movies, newMovie];
+    saveMovies(movies);
+    // Simula o tempo de resposta
     setTimeout(() => {
       resolve('OK');
-    }, 1000);
-  });
-};
+    }, TIME_OUT);
+  })
+);
 
 export const deleteMovie = (movieId) => {
   let movies = readMovies();
@@ -63,6 +65,6 @@ export const deleteMovie = (movieId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ status: 'OK' });
-    }, 1000);
+    }, TIME_OUT);
   });
 };
