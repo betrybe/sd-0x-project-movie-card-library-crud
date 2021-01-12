@@ -218,7 +218,7 @@ Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente
 Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie` do módulo `movieAPI`. Após finalizar a requisição, redirecione o app para a página inicial. O cartão apagado não deverá mais se encontrar na lista.
 
 #### O que será testado:
-- `MovieDetails` deverá conter um botão com o texto "DELETAR"
+- `MovieDetails` deverá conter um link com o texto "DELETAR"
 - o botão "DELETAR" deverá fazer uma requisição para a API para excluir o filme em questão
 
 ---
