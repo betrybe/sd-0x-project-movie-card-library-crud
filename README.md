@@ -23,14 +23,17 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Como desenvolver](#como-desenvolver)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Lista de requisitos](#lista-de-requisitos)
+    
+    `Requisitos Obrigatórios:`
     - [1 - Renderize BrowserRouter no componente App usando rotas](#1---renderize-browserrouter-no-componente-app-usando-rotas)
     - [2 - Faça uma requisição para buscar e mostrar a lista de filmes quando MovieList for montado](#2---faça-uma-requisição-para-buscar-e-mostrar-a-lista-de-filmes-quando-movielist-for-montado)
     - [3 - Insira um link para a página de detalhes de um filme dentro de MovieCard](#3---insira-um-link-para-a-página-de-detalhes-de-um-filme-dentro-de-moviecard)
     - [4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de Movie Details](#4---faça-uma-requisição-para-buscar-o-filme-que-deverá-ser-renderizado-dentro-de-movie-details)
     - [5 - Realize uma requisição para buscar o filme que será editado em EditMovie](#5---realize-uma-requisição-para-buscar-o-filme-que-será-editado-em-editmovie)
     - [6 - Insira um link na página inicial para NewMovie para criar novos cartões](#6---insira-um-link-na-página-inicial-para-newmovie-para-criar-novos-cartões)
-    - [7 - Adicione proptypes a todos os componentes](#7---adicione-proptypes-a-todos-os-componentes)
-    - [Bônus: Adicione um link para deletar um cartão em MovieDetails](#bônus-adicione-um-link-para-deletar-um-cartão-em-moviedetails)
+        
+    `Requisitos Bônus:`
+    - [7 - Adicione um link para deletar um cartão em MovieDetails](#7---adicione-um-link-para-deletar-um-cartão-em-moviedetails)
 - [Avisos Finais](#avisos-finais)
 
 # Habilidades
@@ -206,6 +209,10 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para estruturar e estilizar a página, portanto, abusem da criatividade! 😉
 
+**⚠️ Adicione proptypes a todos os componentes ⚠️**
+
+Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá estar com os _proptypes_ bem configurados para satisfazer os requisitos.
+
 ## Lista de requisitos
 
 ### 1 - Renderize `BrowserRouter` no componente `App` usando rotas
@@ -323,16 +330,9 @@ Na rota `/movies/new`, utilizando a callback passada para `MovieForm`, `NewMovie
 - `NewMovie` deverá conter um formulário que faz uma requisição para API para criar um novo filme. Após a criação, a pessoa usuária deverá ser redirecionada para a página inicial
 ```
 
-### 7 - Adicione proptypes a todos os componentes
+#### Requisitos bônus:
 
-Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá passar no _Code Climate_ para satisfazer esse requisito.
-
-#### O que será verificado:
-```
-- todos os componentes que recebem props, devem ter seus tipos definidos de acordo com os padrões do linter
-```
-
-### Bônus: Adicione um link para deletar um cartão em `MovieDetails`
+### 7 - Adicione um link para deletar um cartão em `MovieDetails`
 
 Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie` do módulo `movieAPI`. Após finalizar a requisição, redirecione o app para a página inicial. O cartão apagado não deverá mais se encontrar na lista.
 

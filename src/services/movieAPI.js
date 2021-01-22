@@ -3,27 +3,35 @@ import data from './movieData';
 localStorage.setItem('movies', JSON.stringify(data));
 
 const readMovies = () => JSON.parse(localStorage.getItem('movies'));
-
 const saveMovies = (movies) => localStorage.setItem('movies', JSON.stringify(movies));
 
-const TIME_OUT = 2000;
+const TIMEOUT = 2000;
+const SUCCESS_STATUS = 'OK';
+
+// --------------------------------------------------------------------
+// A função simulateRequest simula uma requisição para uma API externa
+// Esse tipo de função que "chama outra função" é chamada de 
+// "currying function" https://javascript.info/currying-partials
+// não se preocupe, estudaremos isso mais futuramente
+// --------------------------------------------------------------------
+
+const simulateRequest = (response) => (callback) => {
+  setTimeout(() => {
+    callback(response);
+  }, TIMEOUT);
+};
 
 export const getMovies = () => (
   new Promise((resolve) => {
-    setTimeout(() => {
-      const movies = readMovies();
-      resolve(movies);
-    }, TIME_OUT);
+    const movies = readMovies();
+    simulateRequest(movies)(resolve);
   })
 );
 
 export const getMovie = (movieId) => {
   const movie = readMovies().find((mov) => mov.id === parseInt(movieId, 10));
-
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(movie);
-    }, TIME_OUT);
+    simulateRequest(movie)(resolve);
   });
 };
 
@@ -36,10 +44,7 @@ export const updateMovie = (updatedMovie) => (
       return movie;
     });
     saveMovies(movies);
-    // Simula o tempo de resposta
-    setTimeout(() => {
-      resolve('OK');
-    }, TIME_OUT);
+    simulateRequest(SUCCESS_STATUS)(resolve);
   })
 );
 
@@ -50,10 +55,7 @@ export const createMovie = (movieData) => (
     const newMovie = { ...movieData, id: nextId };
     movies = [...movies, newMovie];
     saveMovies(movies);
-    // Simula o tempo de resposta
-    setTimeout(() => {
-      resolve('OK');
-    }, TIME_OUT);
+    simulateRequest(SUCCESS_STATUS)(resolve);
   })
 );
 
@@ -63,8 +65,6 @@ export const deleteMovie = (movieId) => {
   saveMovies(movies);
 
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ status: 'OK' });
-    }, TIME_OUT);
+    simulateRequest({ status: SUCCESS_STATUS })(resolve);
   });
 };
