@@ -15,25 +15,29 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar](#instruções-para-entregar)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
   - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-  - [Revisando um pull request](#revisando-um-pull-request)
 - [Como desenvolver](#como-desenvolver)
+  - [Nomenclatura](#nomenclatura)
+  - [Linter](#linter)
+  - [Testes](#testes)
+    - [Dica: desativando testes](#dica-desativando-testes)
+    - [Dica: watch mode](#dica-watch-mode)
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [Lista de requisitos](#lista-de-requisitos)
-    
+
     `Requisitos Obrigatórios:`
-    - [1 - Renderize BrowserRouter no componente App usando rotas](#1---renderize-browserrouter-no-componente-app-usando-rotas)
-    - [2 - Faça uma requisição para buscar e mostrar a lista de filmes quando MovieList for montado](#2---faça-uma-requisição-para-buscar-e-mostrar-a-lista-de-filmes-quando-movielist-for-montado)
-    - [3 - Insira um link para a página de detalhes de um filme dentro de MovieCard](#3---insira-um-link-para-a-página-de-detalhes-de-um-filme-dentro-de-moviecard)
-    - [4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de Movie Details](#4---faça-uma-requisição-para-buscar-o-filme-que-deverá-ser-renderizado-dentro-de-movie-details)
-    - [5 - Realize uma requisição para buscar o filme que será editado em EditMovie](#5---realize-uma-requisição-para-buscar-o-filme-que-será-editado-em-editmovie)
-    - [6 - Insira um link na página inicial para NewMovie para criar novos cartões](#6---insira-um-link-na-página-inicial-para-newmovie-para-criar-novos-cartões)
+    - [1 - Renderize BrowserRouter no componente App usando rotas](#1-renderize-browserrouter-no-componente-app-usando-rotas)
+    - [2 - Faça uma requisição para buscar e mostrar a lista de filmes quando MovieList for montado](#2-faça-uma-requisição-para-buscar-e-mostrar-a-lista-de-filmes-quando-movielist-for-montado)
+    - [3 - Insira um link para a página de detalhes de um filme dentro de MovieCard](#3-insira-um-link-para-a-página-de-detalhes-de-um-filme-dentro-de-moviecard)
+    - [4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de Movie Details](#4-faça-uma-requisição-para-buscar-o-filme-que-deverá-ser-renderizado-dentro-de-movie-details)
+    - [5 - Realize uma requisição para buscar o filme que será editado em EditMovie](#5-realize-uma-requisição-para-buscar-o-filme-que-será-editado-em-editmovie)
+    - [6 - Insira um link na página inicial para NewMovie para criar novos cartões](#6-insira-um-link-na-página-inicial-para-newmovie-para-criar-novos-cartões)
         
     `Requisitos Bônus:`
-    - [7 - Adicione um link para deletar um cartão em MovieDetails](#7---adicione-um-link-para-deletar-um-cartão-em-moviedetails)
+    - [7 - Adicione um link para deletar um cartão em MovieDetails](#7-adicione-um-link-para-deletar-um-cartão-em-moviedetails)
+- [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
+- [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos Finais](#avisos-finais)
 
 # Habilidades
@@ -56,6 +60,8 @@ Nesse projeto, você será capaz de:
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
 Lembre-se que você pode consultar nosso conteúdo sobre Git & GitHub sempre que precisar!
+
+---
 
 ## O que deverá ser desenvolvido
 
@@ -91,18 +97,19 @@ Outra diferença importante neste projeto em relação aos anteriores é que os 
 
 ## Data de entrega
 
-Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Serão `X` dias de projeto.
+  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
 
 ---
 
-# Instruções para entregar
+# Instruções para entregar seu projeto
 
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-0x-project-movie-card-library-crud.git`.
+  * `git clone git@github.com:tryber/sd-0x-project-movie-card-library-crud-rubric.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-project-movie-card-library-crud`
+    * `cd sd-0x-project-movie-card-library-crud-rubric`
 
 2. Instale as dependências e inicialize o projeto
   * Instale as dependências:
@@ -152,16 +159,20 @@ export default App;
   * Usando o exemplo anterior: `git push -u origin joaozinho-project-movie-card-library-crud`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-movie-card-library-crud-rubric/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-movie-card-library-crud/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-movie-card-library-crud-rubric/pulls) e confira que o seu _Pull Request_ está criado
 
+
+---
 
 ## Durante o desenvolvimento
+
+* ⚠ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 * ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
@@ -183,27 +194,13 @@ export default App;
 
 ---
 
-## Depois de terminar o desenvolvimento (opcional)
+# Como desenvolver
 
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
-
-Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+Este repositório já contém um _template_ com um App React criado. Após clonar o projeto e instalar as dependências (mais sobre isso abaixo), você deverá completar este _template_ implementando os requisitos listados na próxima seção.
 
 ---
 
-## Revisando um pull request
-
-Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
-
-# Requisitos do projeto
+## Nomenclatura 
 
 **ATENÇÃO!** Muito cuidado com os nomes especificados nos requisitos! O conteúdo deve ser **exatamente igual** ao texto descrito no requisito. Em alguns componentes foram colocadas propriedades chamadas _data-testid_ que, sob qualquer hipótese não devem ser alteradas. Os detalhes acima tem implicação direta no funcionamento do avaliador.
 
@@ -213,7 +210,67 @@ Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para
 
 Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá estar com os _proptypes_ bem configurados para satisfazer os requisitos.
 
-## Lista de requisitos
+---
+
+## Linter
+
+Para garantir a qualidade do código, vamos utilizar neste projeto os linters `ESLint` e `StyleLint`.
+Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
+e de fácil manutenção! Para roda-los localmente no projeto, execute os comandos abaixo:
+
+```bash
+npm run lint
+npm run lint:styles
+```
+
+⚠️ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.
+ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
+
+---
+
+## Testes
+
+Todos os requisitos do projeto serão testados **automaticamente**. Cada componente possui vários requisitos e os testes para cada requisito de um componente estão no arquivo de teste correspondente.
+
+_**Por exemplo**: Os requisitos relacionados à página `EditMovie` estão no arquivo `EditMovie.test.js`._
+
+Para executar os testes localmente, digite no terminal o comando `npm test`.
+
+### Dica: desativando testes
+
+Especialmente no início, quando a maioria dos testes está falhando, a saída após executar os testes é bastante poluída. Você pode desabilitar temporariamente um teste utilizando a função `skip` junto à função `it`. Como o nome indica, esta função "pula" um teste:
+
+```js
+it.skip('it includes the text `Movie Cards Library` inside a h1 tag', () => {
+  wrapper = shallow(<Header />);
+
+  expect(wrapper.find('header h1').text()).toBe('Movie Cards Library');
+});
+```
+
+Uma estratégia é pular todos os testes no início e ir implementando um teste de cada vez, removendo dele a função `skip`.
+
+Você também pode rodar apenas um arquivo de teste, por exemplo:
+
+```bash
+npm test SearchBar.test.js
+```
+
+⚠️ Lembre-se de não entregar o projeto com nenhum teste ignorado. **Testes ignorados serão tratados como testes falhando**. ⚠️
+
+⚠️ **Não apague, em hipótese alguma, qualquer teste ou arquivo deste repositório**. ⚠️
+
+---
+
+### Dica: watch mode
+
+Ao executar os testes localmente, [Jest](https://jestjs.io/), a ferramenta que executa os testes, entra em _watch mode_. Nesse modo, a cada vez que um arquivo é salvo, os testes são executados novamente. Isso pode aumentar sua produtividade removendo a necessidade de executar os testes manualmente o tempo todo. Você pode abrir uma aba no seu terminal ou no terminal do _VSCode_ e deixar o _Jest_ rodando nesse modo.
+
+⚠️  **Este trabalho contém alguns testes de componente não relacionados diretamente a requisitos! Estude-os e use-os para se orientar durante o desenvolvimento, garantindo que estejam sempre passando** ✅! ⚠️
+
+---
+
+## Requisitos do projeto
 
 ### 1 - Renderize `BrowserRouter` no componente `App` usando rotas
 
@@ -221,11 +278,11 @@ Você deve utilizar um `BrowserRouter` pra criar as rotas da sua aplicação. As
 
 #### O que será verificado:
 ```
-- a rota `/` deve renderizar MovieList
-- a rota `/movies/:id` deve renderizar MovieDetails
-- a rota `/movies/new` deve renderizar NewMovie
-- a rota `/movies/:id/edit` deve renderizar EditMovie
-- qualquer rota não declarada deve renderizar NotFound
+- Será validado se a rota `/` renderiza a página MovieList
+- Será validado se a rota `/movies/:id` renderiza a página MovieDetails
+- Será validado se a rota `/movies/new` renderiza a página NewMovie
+- Será validado se a rota `/movies/:id/edit` renderiza a página EditMovie
+- Será validado se qualquer rota não declarada renderiza a página NotFound
 ```
 
 ### 2 - Faça uma requisição para buscar e mostrar a lista de filmes quando `MovieList` for montado 
@@ -245,8 +302,8 @@ Você precisará adicionar um estado em `MovieList` para controlar o que será e
 
 #### O que será verificado:
 ```
-- `MovieList` deverá exibir o texto `Carregando...` enquanto estiver fazendo a requisição
-- `MovieList` deverá exibir um `MovieCard` para cada filme retornado pela API
+- Será validado se a página `MovieList` exibe o texto `Carregando...` enquanto estiver fazendo a requisição
+- Será validado se a página `MovieList` exibe um `MovieCard` para cada filme retornado pela API
 ```
 
 ### 3 - Insira um link para a página de detalhes de um filme dentro de `MovieCard`
@@ -255,8 +312,8 @@ Todos os `MovieCard`s devem possuir em seu conteúdo, pelo menos, o título, a s
 
 #### O que será verificado:
 ```
-- cada `MovieCard` deve exibir pelo menos o título e a sinopse de seu respectivo filme
-- cada `MovieCard` deve conter um link com o texto `VER DETALHES` que redireciona para a página de detalhes do filme
+- Será validado se cada `MovieCard` exibe pelo menos o título e a sinopse de seu respectivo filme
+- Será validado se cada `MovieCard` contém um link com o texto `VER DETALHES` que redireciona para a página de detalhes do filme
 ```
 
 ### 4 - Faça uma requisição para buscar o filme que deverá ser renderizado dentro de `Movie Details`
@@ -275,10 +332,10 @@ Os campos devem existir no cartão conforme ilustrado na imagem abaixo.
 
 #### O que será verificado:
 ```
-- `MovieDetails` deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição
-- `MovieDetails` deverá exibir o título, o subtítulo, a sinopse, a imagem e o gênero do filme
-- `MovieDetails` deverá conter um botão com o texto "VOLTAR" que redireciona para a página inicial
-- `MovieDetails` deverá conter um botão com o texto "EDITAR" que redireciona para a página de edição de filme
+- Será validado se `MovieDetails` exibe o texto "Carregando..." enquanto estiver fazendo a requisição
+- Será validado se `MovieDetails` exibe o título, o subtítulo, a sinopse, a imagem e o gênero do filme
+- Será validado se `MovieDetails` contém um botão com o texto "VOLTAR" que redireciona para a página inicial
+- Será validado se `MovieDetails` contém um botão com o texto "EDITAR" que redireciona para a página de edição de filme
 ```
 
 ![image](card-details.png)
@@ -305,9 +362,9 @@ Ao ser montada, a página de edição do filme deve fazer uma requisição pra b
 
 #### O que será verificado:
 ```
-- `EditMovie` deverá exibir o texto "Carregando..." enquanto estiver fazendo a requisição
-- `EditMovie` deverá conter um formulário preenchido com o título, subtítulo, sinopse, caminho da imagem e gênero do filme selecionado
-- Quando clicar no botão de submit, deverá fazer uma requisição para API para atualizar o filme selecionado. Após a conclusão da atualização a pessoa usuária deverá ser redirecionada para a página inicial
+- Será validado se `EditMovie` exibe o texto "Carregando..." enquanto estiver fazendo a requisição
+- Será validado se `EditMovie` contém um formulário preenchido com o título, subtítulo, sinopse, caminho da imagem e gênero do filme selecionado
+- Será validado se ao clicar no botão de submit, uma requisição para API é feita, e o filme selecionado é atualizado. Após a conclusão da atualização a pessoa usuária deve ser redirecionada para a página inicial
 ```
 
 ### 6 - Insira um link na página inicial para `NewMovie` para criar novos cartões
@@ -318,8 +375,8 @@ Na rota `/movies/new`, utilizando a callback passada para `MovieForm`, `NewMovie
 
 #### O que será verificado:
 ```
-- a página inicial deverá conter um link "ADICIONAR CARTÃO". Esse link deve redirecionar para a página de criação de filmes
-- `NewMovie` deverá conter um formulário que faz uma requisição para API para criar um novo filme. Após a criação, a pessoa usuária deverá ser redirecionada para a página inicial
+- Será validado se a página inicial contém um link "ADICIONAR CARTÃO". Esse link deve redirecionar para a página de criação de filmes
+- Será validado se `NewMovie` contém um formulário que faz uma requisição para API para criar um novo filme. Após a criação, a pessoa usuária deverá ser redirecionada para a página inicial
 ```
 
 #### Requisitos bônus:
@@ -330,9 +387,31 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 
 #### O que será verificado:
 ```
-- `MovieDetails` deverá conter um link com o texto "DELETAR"
-- o link "DELETAR" deverá fazer uma requisição para a API para excluir o filme em questão
+- Será validado se `MovieDetails` contém um link com o texto "DELETAR"
+- Será validado se o link "DELETAR" faz uma requisição para a API para excluir o filme em questão
 ```
+
+---
+
+## Depois de terminar o desenvolvimento (opcional)
+
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+## Revisando um pull request
+
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 ---
 
@@ -340,6 +419,6 @@ Ao clicar neste link, faça uma requisição utilizando a função `deleteMovie`
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
