@@ -346,7 +346,6 @@ Os campos devem existir no cartão conforme ilustrado na imagem abaixo.
 
 - Será validado se `MovieDetails` contém um botão com o texto "EDITAR" que redireciona para a página de edição de filme
 
-
 ![image](card-details.png)
 
 ### Para os requisitos 5 e 6:
