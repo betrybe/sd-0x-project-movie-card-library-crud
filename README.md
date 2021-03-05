@@ -208,7 +208,7 @@ Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para
 
 **⚠️ Adicione PropTypes a todos os componentes ⚠️**
 
-Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá estar com os _proptypes_ bem configurados para satisfazer os requisitos.
+Todos os componentes que recebem _props_ devem ter suas _PropTypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _PropTypes_, portanto seu _Pull Request_ só receberá nota se elas estiverem feitas.
 
 ---
 
