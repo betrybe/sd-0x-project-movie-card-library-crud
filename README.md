@@ -373,7 +373,7 @@ Ao ser montada, a página de edição do filme deve fazer uma requisição pra b
 - Será validado se `EditMovie` exibe o texto "Carregando..." enquanto estiver fazendo a requisição
 - Será validado se `EditMovie` contém um formulário preenchido com o título, subtítulo, sinopse, caminho da imagem e gênero do filme selecionado
 
-- Será validado se ao clicar no botão de submit, uma requisição para API é feita, e o filme selecionado é atualizado. Após a conclusão da atualização a pessoa usuária deve ser redirecionada para a página inicial
+- Será validado se, ao clicar no botão de submit, uma requisição para API é feita e o filme selecionado é atualizado. Após a conclusão da atualização a pessoa usuária deve ser redirecionada para a página inicial
 
 
 ### 6 - Insira um link na página inicial para `NewMovie` para criar novos cartões
