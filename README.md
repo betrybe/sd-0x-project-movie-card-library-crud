@@ -206,7 +206,7 @@ Este repositório já contém um _template_ com um App React criado. Após clona
 
 Os testes foram desenvolvidos dessa forma para permitir uma maior liberdade para estruturar e estilizar a página, portanto, abusem da criatividade! 😉
 
-**⚠️ Adicione proptypes a todos os componentes ⚠️**
+**⚠️ Adicione PropTypes a todos os componentes ⚠️**
 
 Todos os componentes que recebem _props_ devem ter suas _proptypes_ corretamente declaradas. O _eslint_ checa automaticamente declaração de _proptypes_, portanto seu _Pull Request_ deverá estar com os _proptypes_ bem configurados para satisfazer os requisitos.
 
